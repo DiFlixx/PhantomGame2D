@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://gg.png" type="Texture" id=1]
+[ext_resource path="res://ggggggggggggg.png" type="Texture" id=2]
+
+[sub_resource type="SpriteFrames" id=1]
+resource_local_to_scene = true
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
+
+[node name="AnimatedSprite" type="AnimatedSprite"]
+position = Vector2( 683.87, 236.322 )
+scale = Vector2( 0.530388, 0.467591 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
