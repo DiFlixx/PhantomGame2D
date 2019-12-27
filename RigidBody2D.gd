@@ -29,11 +29,16 @@ func _physics_process(delta):
 	# Create forces
 	var force = Vector2(0, GRAVITY)
 	
+	var ML = Input.is_action_just_pressed("mouse_left")
 	var walk_left = Input.is_action_pressed("ui_left")
 	var walk_right = Input.is_action_pressed("ui_right")
 	var jump = Input.is_action_pressed("ui_up")
 	stop = true
-	
+	if(ML):
+		var colliding = raycast (self.position,get_global_mouse_position())
+		if colliding:
+			var cell = $"../TileMap".world_to_map(colliding.position + colliding.normal)
+			$"../TileMap".set_cell(cell.x, cell.y-1, 6)
 	if walk_left:
 		if  velocity.x > -WALK_MAX_SPEED:
 			force.x -= WALK_FORCE
@@ -59,7 +64,6 @@ func _physics_process(delta):
 		velocity.x = vlen * vsign
 	
 	# Integrate forces to velocity
-	print(force)
 	velocity += force * delta
 	# Integrate velocity into motion and move
 	velocity = move_and_slide(velocity, Vector2(0, -1))
@@ -79,3 +83,6 @@ func _physics_process(delta):
 	
 	on_air_time += delta
 	prev_jump_pressed = jump
+func raycast(from, to):
+	var space_state = get_world_2d().direct_space_state
+	return space_state.intersect_ray(from, to, [self])
