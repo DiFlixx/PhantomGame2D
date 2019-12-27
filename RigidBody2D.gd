@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+
 # This demo shows how to build a kinematic controller.
 
 # Member variables
@@ -9,7 +10,7 @@ const GRAVITY = 150.0 # pixels/second/second
 const FLOOR_ANGLE_TOLERANCE = 40
 const WALK_FORCE = 600
 const WALK_MIN_SPEED = 10
-const WALK_MAX_SPEED = 200
+const WALK_MAX_SPEED = 300
 const STOP_FORCE = 1300
 const JUMP_SPEED = 200
 const JUMP_MAX_AIRBORNE_TIME = 0.2
@@ -20,7 +21,7 @@ const SLIDE_STOP_MIN_TRAVEL = 1.0 # one pixel
 var velocity = Vector2()
 var on_air_time = 100
 var jumping = false
-
+var stop = true
 var prev_jump_pressed = false
 
 
@@ -31,22 +32,26 @@ func _physics_process(delta):
 	var walk_left = Input.is_action_pressed("ui_left")
 	var walk_right = Input.is_action_pressed("ui_right")
 	var jump = Input.is_action_pressed("ui_up")
-	
-	var stop = true
+	stop = true
 	
 	if walk_left:
-		if velocity.x <= WALK_MIN_SPEED and velocity.x > -WALK_MAX_SPEED:
+		if  velocity.x > -WALK_MAX_SPEED:
 			force.x -= WALK_FORCE
 			stop = false
-	elif walk_right:
-		if velocity.x >= -WALK_MIN_SPEED and velocity.x < WALK_MAX_SPEED:
+			$AnimatedSprite.flip_h = true
+			$AnimatedSprite.playing = 1
+	if walk_right:
+		if velocity.x < WALK_MAX_SPEED:
 			force.x += WALK_FORCE
 			stop = false
+			$AnimatedSprite.flip_h = false
+			$AnimatedSprite.playing = 1
 	
 	if stop:
 		var vsign = sign(velocity.x)
 		var vlen = abs(velocity.x)
-		
+		$AnimatedSprite.playing = 0
+		$AnimatedSprite.frame = 0
 		vlen -= STOP_FORCE * delta
 		if vlen < 0:
 			vlen = 0
@@ -54,7 +59,8 @@ func _physics_process(delta):
 		velocity.x = vlen * vsign
 	
 	# Integrate forces to velocity
-	velocity += force * delta	
+	print(force)
+	velocity += force * delta
 	# Integrate velocity into motion and move
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
