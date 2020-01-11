@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://RigidBody2D.tscn" type="PackedScene" id=2]
-[ext_resource path="res://RigidBody2D.gd" type="Script" id=3]
 
 [node name="Node" type="Node"]
 
@@ -14,4 +13,3 @@ tile_data = PoolIntArray( -589819, 3, 0, -589818, 3, 0, -589817, 3, 0, -589816, 
 
 [node name="RigidBody2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( 467.562, 349.084 )
-script = ExtResource( 3 )
