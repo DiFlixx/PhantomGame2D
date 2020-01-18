@@ -118,6 +118,8 @@ func raycast(from, to):
 	var space_state = get_world_2d().direct_space_state
 	return space_state.intersect_ray(from, to, [self])
 
+
+
 func _on_Button_pressed():
 	www = 1
 	pass # Replace with function body.
@@ -126,7 +128,8 @@ func _on_Button_pressed():
 func _on_Button2_pressed():
 	www = 2
 	pass # Replace with function body.
-	
+
+
 func _on_Button3_pressed():
 	www = 3
 	pass # Replace with function body.
@@ -144,9 +147,4 @@ func _on_Button5_pressed():
 
 func _on_Button6_pressed():
 	www = 6
-	pass # Replace with function body.
-
-
-func _on_Button7_pressed():
-	www = 0
 	pass # Replace with function body.

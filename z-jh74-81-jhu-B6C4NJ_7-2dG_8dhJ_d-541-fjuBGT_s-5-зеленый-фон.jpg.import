@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/z-jh74-81-jhu-B6C4NJ_7-2dG_8dhJ_d-541-fjuBGT_s-5-зеленый-фон.jpg-13addaa09c0b6638d7fdc360a318e79d.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://z-jh74-81-jhu-B6C4NJ_7-2dG_8dhJ_d-541-fjuBGT_s-5-зеленый-фон.jpg"
+dest_files=[ "res://.import/z-jh74-81-jhu-B6C4NJ_7-2dG_8dhJ_d-541-fjuBGT_s-5-зеленый-фон.jpg-13addaa09c0b6638d7fdc360a318e79d.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
