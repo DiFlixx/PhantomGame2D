@@ -12,7 +12,7 @@ var WALK_FORCE = 600
 var WALK_MIN_SPEED = 10
 var WALK_MAX_SPEED = 300
 const STOP_FORCE = 1300
-const JUMP_SPEED = 200
+const JUMP_SPEED = 207.5
 const JUMP_MAX_AIRBORNE_TIME = 0.2
 
 var SLIDE_STOP_VELOCITY = 1.0 # one pixel/second
@@ -147,4 +147,10 @@ func _on_Button5_pressed():
 
 func _on_Button6_pressed():
 	www = 6
+	pass # Replace with function body.
+
+
+func _on_Button7_pressed():
+	var cells = $"../TileMap".get_used_cells()
+	print(cells)
 	pass # Replace with function body.

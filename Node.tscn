@@ -31,7 +31,16 @@ margin_left = 397.559
 margin_top = 923.791
 margin_right = 469.559
 margin_bottom = 982.791
+rect_pivot_offset = Vector2( 122.442, 46.4077 )
 text = "1"
+
+[node name="Button7" type="Button" parent="Camera2D"]
+margin_left = 565.424
+margin_top = 868.739
+margin_right = 637.424
+margin_bottom = 927.739
+rect_pivot_offset = Vector2( 122.442, 46.4077 )
+text = "%"
 
 [node name="Button2" type="Button" parent="Camera2D"]
 margin_left = 466.312
@@ -71,6 +80,8 @@ text = "6"
 [node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 515.971, 373.755 )
 [connection signal="pressed" from="Camera2D/Button" to="KinematicBody2D" method="_on_Button_pressed"]
+[connection signal="pressed" from="Camera2D/Button7" to="KinematicBody2D" method="_on_Button7_pressed"]
+[connection signal="pressed" from="Camera2D/Button7" to="KinematicBody2D" method="_on_Button_pressed"]
 [connection signal="pressed" from="Camera2D/Button2" to="KinematicBody2D" method="_on_Button2_pressed"]
 [connection signal="pressed" from="Camera2D/Button3" to="KinematicBody2D" method="_on_Button3_pressed"]
 [connection signal="pressed" from="Camera2D/Button4" to="KinematicBody2D" method="_on_Button4_pressed"]
