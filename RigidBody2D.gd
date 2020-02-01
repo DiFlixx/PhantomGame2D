@@ -26,6 +26,11 @@ var prev_jump_pressed = false
 var anim = ""
 var www = 0
 
+
+func _ready():
+	cells_load()
+	pass
+	
 func _physics_process(delta):
 	# Create forces
 	var force = Vector2(0, GRAVITY)
@@ -153,4 +158,27 @@ func _on_Button6_pressed():
 func _on_Button7_pressed():
 	var cells = $"../TileMap".get_used_cells()
 	print(cells)
+	cells_save(cells)
 	pass # Replace with function body.
+
+func cells_save(cells):
+	var file = File.new()
+	file.open("res://save.dat", file.WRITE)
+	#var cells_new = []
+	#for cell in cells:
+	#	cells_new
+	file.store_var(cells)
+	file.close()
+	pass
+	
+func cells_load():
+	var file = File.new()
+	if file.file_exists("res://save.dat"):
+		file.open("res://save.dat", file.READ)
+		var cells = file.get_var()
+		file.close()
+		var tilemap = $"../TileMap"
+		tilemap.clear()
+		for cell in cells:
+			tilemap.set_cellv(cell, 0)
+	pass

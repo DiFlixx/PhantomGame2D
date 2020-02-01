@@ -9,7 +9,7 @@
 [node name="Node" type="Node"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 516.7, 368.545 )
+position = Vector2( 515.944, 368.545 )
 scale = Vector2( 1.53292, 1.51901 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
@@ -80,8 +80,8 @@ text = "6"
 [node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 515.971, 373.755 )
 [connection signal="pressed" from="Camera2D/Button" to="KinematicBody2D" method="_on_Button_pressed"]
-[connection signal="pressed" from="Camera2D/Button7" to="KinematicBody2D" method="_on_Button7_pressed"]
 [connection signal="pressed" from="Camera2D/Button7" to="KinematicBody2D" method="_on_Button_pressed"]
+[connection signal="pressed" from="Camera2D/Button7" to="KinematicBody2D" method="_on_Button7_pressed"]
 [connection signal="pressed" from="Camera2D/Button2" to="KinematicBody2D" method="_on_Button2_pressed"]
 [connection signal="pressed" from="Camera2D/Button3" to="KinematicBody2D" method="_on_Button3_pressed"]
 [connection signal="pressed" from="Camera2D/Button4" to="KinematicBody2D" method="_on_Button4_pressed"]
