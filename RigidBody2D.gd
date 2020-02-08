@@ -164,10 +164,10 @@ func _on_Button7_pressed():
 func cells_save(cells):
 	var file = File.new()
 	file.open("res://save.dat", file.WRITE)
-	#var cells_new = []
-	#for cell in cells:
-	#	cells_new
-	file.store_var(cells)
+	var cells_new = []
+	for cell in cells:
+		cells_new.append(Vector3(cell.x, cell.y, $"../TileMap".get_cell(cell.x, cell.y)))
+	file.store_var(cells_new)
 	file.close()
 	pass
 	
@@ -179,6 +179,7 @@ func cells_load():
 		file.close()
 		var tilemap = $"../TileMap"
 		tilemap.clear()
+		print(cells)
 		for cell in cells:
-			tilemap.set_cellv(cell, 0)
+			tilemap.set_cellv(Vector2(cell.x, cell.y), cell.z)
 	pass
