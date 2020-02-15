@@ -126,7 +126,7 @@ func raycast(from, to):
 
 
 func _on_Button_pressed():
-	www = 1
+	www = 7
 	pass # Replace with function body.
 
 
