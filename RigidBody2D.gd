@@ -126,9 +126,12 @@ func raycast(from, to):
 
 
 func _on_Button_pressed():
-	www = 7
+	$"../Camera2D/panel_pos".visible = true
 	pass # Replace with function body.
 
+func _on_Button999_pressed():
+	$"../Camera2D/panel_pos".visible = false
+	pass # Replace with function body.
 
 func _on_Button2_pressed():
 	www = 2
@@ -153,6 +156,10 @@ func _on_Button5_pressed():
 func _on_Button6_pressed():
 	www = 6
 	pass # Replace with function body.
+	
+func _on_Button13_pressed():
+	www = 8
+	pass # Replace with function body.
 
 
 func _on_Button7_pressed():
@@ -161,6 +168,25 @@ func _on_Button7_pressed():
 	cells_save(cells)
 	pass # Replace with function body.
 
+func _on_Button8_pressed():
+	$"../Camera2D/panel_posi".visible = false
+	pass # Replace with function body.
+	
+func _on_Button9_pressed():
+	$"../Camera2D/panel_posi".visible = true
+	pass # Replace with function body.
+	
+func _on_Button10_pressed():
+	var cells = $"../TileMap".get_used_cells()
+	print(cells)
+	cells_delete(cells)
+	pass # Replace with function body.
+	
+func _on_Button12_pressed():
+	get_tree().change_scene("Start.tscn")
+	pass # Replace with function body.
+	
+	
 func cells_save(cells):
 	var file = File.new()
 	file.open("res://save.dat", file.WRITE)
@@ -171,6 +197,10 @@ func cells_save(cells):
 	file.close()
 	pass
 	
+func cells_delete(cells):
+	var dir = Directory.new()
+	dir.remove("user://save.dat")
+
 func cells_load():
 	var file = File.new()
 	if file.file_exists("res://save.dat"):

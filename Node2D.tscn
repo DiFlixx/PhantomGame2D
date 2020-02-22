@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://iвв.png" type="Texture" id=2]
-[ext_resource path="res://bloxi.png" type="Texture" id=3]
-[ext_resource path="res://bloxi2.png" type="Texture" id=4]
-[ext_resource path="res://st07.png" type="Texture" id=5]
-[ext_resource path="res://i.png" type="Texture" id=6]
-[ext_resource path="res://п.png" type="Texture" id=7]
-[ext_resource path="res://minecraft_desk.png" type="Texture" id=8]
+[ext_resource path="res://гарпа.png" type="Texture" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://iвв.png" type="Texture" id=3]
+[ext_resource path="res://bloxi.png" type="Texture" id=4]
+[ext_resource path="res://bloxi2.png" type="Texture" id=5]
+[ext_resource path="res://st07.png" type="Texture" id=6]
+[ext_resource path="res://i.png" type="Texture" id=7]
+[ext_resource path="res://п.png" type="Texture" id=8]
+[ext_resource path="res://minecraft_desk.png" type="Texture" id=9]
 
 [node name="Node2D" type="Node2D"]
 scale = Vector2( 1.04587, 1.01466 )
@@ -24,10 +25,21 @@ __meta__ = {
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/StaticBody2D"]
 polygon = PoolVector2Array( 32, -32, 32, 32, -32, 32, -32, -32 )
 
+[node name="Sprite9" type="Sprite" parent="."]
+position = Vector2( 187.745, -21.9681 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite9"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite9/StaticBody2D"]
+polygon = PoolVector2Array( 32, -32, 32, 32, -32, 32, -32, -32 )
+
 [node name="Sprite8" type="Sprite" parent="."]
 position = Vector2( 150.561, 168.169 )
-scale = Vector2( 0.0642023, 0.0704783 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Sprite8"]
 
@@ -37,7 +49,7 @@ polygon = PoolVector2Array( 32, -32, 32, 32, -32, 32, -32.0768, -4.65845, -32, -
 
 [node name="Sprite2" type="Sprite" parent="."]
 position = Vector2( -77.833, -52.8153 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -49,7 +61,7 @@ polygon = PoolVector2Array( 32, -32, 32, 32, -32, 32, -32, -32 )
 
 [node name="Sprite3" type="Sprite" parent="."]
 position = Vector2( -112.117, 41.233 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -61,7 +73,7 @@ polygon = PoolVector2Array( 32, -32, 32, 32, -32, 32, -32, -32 )
 
 [node name="Sprite4" type="Sprite" parent="."]
 position = Vector2( 59.873, -24.1751 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -73,7 +85,7 @@ polygon = PoolVector2Array( 32, -32, 32, 32, -32, 32, -32, -32 )
 
 [node name="Sprite5" type="Sprite" parent="."]
 position = Vector2( -125.163, 132.551 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -85,7 +97,7 @@ polygon = PoolVector2Array( 32, -32, 32, 32, -32, 32, -32, -32 )
 
 [node name="Sprite6" type="Sprite" parent="."]
 position = Vector2( 20.4774, 114.892 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -98,7 +110,7 @@ polygon = PoolVector2Array( 32, -32, 32, 32, -32, 32, -32, -32 )
 [node name="Sprite7" type="Sprite" parent="."]
 position = Vector2( 74.7746, 39.814 )
 scale = Vector2( 0.966706, 0.960652 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 __meta__ = {
 "_edit_group_": true
 }
