@@ -63,6 +63,9 @@ func _physics_process(delta):
 		WALK_FORCE = 600
 		GRAVITY = 150.0
 	var new_anim = "Idle"
+	
+	#raycast
+	
 	if(MR):
 		var colliding = raycast (self.position,get_global_mouse_position() )
 		if colliding:
@@ -73,6 +76,10 @@ func _physics_process(delta):
 		if colliding:
 			var cell = $"../TileMap".world_to_map(colliding.position + colliding.normal)
 			$"../TileMap".set_cell(cell.x, cell.y, www)
+			
+	#walk
+			
+			
 	if walk_left:
 		if  velocity.x > -WALK_MAX_SPEED:
 			force.x -= WALK_FORCE
@@ -85,6 +92,8 @@ func _physics_process(delta):
 			stop = false
 			$Sprite.scale.x = 0.1
 			new_anim = "Walk"
+			
+			#stop
 	
 	if stop:
 		var vsign = sign(velocity.x)
@@ -92,6 +101,10 @@ func _physics_process(delta):
 		vlen -= STOP_FORCE * delta
 		if vlen < 0:
 			vlen = 0
+			
+			
+			
+			
 		
 		velocity.x = vlen * vsign
 	
@@ -158,7 +171,7 @@ func _on_Button6_pressed():
 	pass # Replace with function body.
 	
 func _on_Button13_pressed():
-	www = 8
+	www = 0
 	pass # Replace with function body.
 
 
@@ -183,7 +196,7 @@ func _on_Button10_pressed():
 	pass # Replace with function body.
 	
 func _on_Button12_pressed():
-	get_tree().change_scene("Start.tscn")
+	$"../Camera2D/Pos_y".visible = true
 	pass # Replace with function body.
 	
 	
@@ -213,3 +226,43 @@ func cells_load():
 		for cell in cells:
 			tilemap.set_cellv(Vector2(cell.x, cell.y), cell.z)
 	pass
+
+
+func _on_Button20_pressed():
+	www = 8
+	pass # Replace with function body.
+
+
+func _on_Button21_pressed():
+	www = 9
+	pass # Replace with function body.
+
+
+func _on_Button22_pressed():
+	www = 10
+	pass # Replace with function body.
+
+
+func _on_Button23_pressed():
+	www = 11
+	pass # Replace with function body.
+
+
+func _on_Button24_pressed():
+	www = 12
+	pass # Replace with function body.
+
+
+func _on_Button25_pressed():
+	www = 13
+	pass # Replace with function body.
+
+
+func _on_ButtonYES2_pressed():
+	get_tree().change_scene("Start.tscn")
+	pass # Replace with function body.
+
+
+func _on_ButtonNO2_pressed():
+	$"../Camera2D/Pos_y".visible = false
+	pass # Replace with function body.

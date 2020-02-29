@@ -6,6 +6,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,10 +20,25 @@ func _on_Button101_pressed():
 
 
 func _on_Button102_pressed():
-	
+	$"Pos_p".visible = true
 	pass # Replace with function body.
 
 
 func _on_Button103_pressed():
+	$"Pos_u".visible = true
+	pass # Replace with function body.
+
+
+func _on_Button1000_pressed():
+	$"Pos_p".visible = false
+	pass # Replace with function body.
+
+
+func _on_ButtonNO_pressed():
+	$"Pos_u".visible = false
+	pass # Replace with function body.
+
+
+func _on_ButtonYES_pressed():
 	get_tree().quit()
 	pass # Replace with function body.
